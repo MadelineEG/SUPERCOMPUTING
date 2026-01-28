@@ -6,11 +6,10 @@ Create relevant assignment folders starting in SUPERCOMPUTING directory, which w
 ```bash
 mkdir assignments
 mkdir assignments/assignment_1
-mkdir assignments/assignment_2 
 ```
 
 ### 2. Directory Structure
-Add major directories. Note that none of these directories can be commited to Github until they contain placeholder files
+Add major directories. Note that none of these directories can be commited to Github until they contain placeholder files. The file paths below are again designed to be run from a directory (e.g. SUPERCOMPUTING) that contains the assignments folder
 ```bash
 mkdir assignments/assignment_1/data
 mkdir assignments/assignment_1/scripts
@@ -53,7 +52,7 @@ touch assignments/assignment_1/data/references/{genome_ref.fasta,genome_annotati
 touch assignments/assignment_1/data/metadata/metadata.csv
 
 # create placeholder script
-touch assignments/assignment_1/data/scripts/script.py
+touch assignments/assignment_1/scripts/script.py
 
 # create placeholder results table and figure
 # in the below example, we might have profiled the species present in the sequence data with our code and now have a csv with species names and associated data plus a figure with percent abundances
@@ -69,4 +68,7 @@ touch assignments/assignment_1/docs/info.pdf
 
 # create environment config file to prevent conflicts with other projects
 touch assignments/assignment_1/config/environment.yml
+
+# create placeholder log file
+touch assignments/assignment_1/logs/alignment_job_01.log
 ```
