@@ -23,13 +23,13 @@ Add relevant setup files:
 A gitignore file so that nothing crashes when we add large sequence data files
 and an environment file to set up an environment and prevent conflicts with other projects. Note that .gitignore is hidden on terminal
 ```bash
-touch .gitignore
-touch environment.yml
+touch assignments/assignment_1/.gitignore
+touch assignments/assignment_1/environment.yml
 ```
 Add markdown files
 ```bash
-touch README.md
-touch assignment_1_essay.md
+touch assignments/assignment_1/README.md
+touch assignments/assignment_1/assignment_1_essay.md
 ```
 
 ### 3. Sub-directories
