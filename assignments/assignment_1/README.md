@@ -2,7 +2,7 @@
 # README for Assigment 1
 
 ### 1. Setup
-Create relevant assignment folders starting in SUPERCOMPUTING directory
+Create relevant assignment folders starting in SUPERCOMPUTING directory, which will contain the folder "assignments"
 ```bash
 mkdir assignments
 mkdir assignments/assignment_1
@@ -33,5 +33,10 @@ touch assignments/assignment_1/assignment_1_essay.md
 ```
 
 ### 3. Sub-directories
+Add subdirectories for storing different relevant types of data in the data directory and for storing different possible results outputs in the results directory. I've included folders for raw and clean data and to store reference sequences and metadata
+```bash
+mkdir assignments/assignment_1/data/{raw,clean,references,metadata}
+mkdir assignments/assignment_1/results/{figures,tables}
+```
 
 ### 4. Placeholder files
