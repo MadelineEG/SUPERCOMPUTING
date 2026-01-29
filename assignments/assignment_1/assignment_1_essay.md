@@ -1,29 +1,18 @@
 
 # Essay for Assignment 1
 
-I’ve been interested in computational biology since my junior year of high school,
-
-when I spent a summer working with a bioinformatician at the National Zoo to reconstruct
-
-and phylogenetically analyze a historical genome sequence of a pathogen called avian poxvirus. 
-
-My mentor taught me the basics of using the Unix CLI and I got a taste of bioinformatic softwares 
-
-including Nextflow, Geneious, and MEGAN (and got to use the Smithsonian’s HPC!). 
-
-This was my first real scientific project, 
-
-and I remember finding it amazing that we could extract information from sequence data—and
-
-that our results potentially had implications for Hawaiian bird conservation. 
-
-My mentor taught me that computational methods are essential to biology research 
-
-(something that I, as a high school student broadly interested in biology and genetics,
-
-hadn’t realized yet), and I decided that I would learn bioinformatics in addition to the
-
-more-traditional biology methods that I’d planned to study.
+I’ve been interested in computational biology since my junior year of high school, 
+when I spent a summer working with a bioinformatician at the National Zoo to reconstruct 
+and phylogenetically analyze a historical genome sequence of a pathogen called avian poxvirus.  
+My mentor taught me the basics of using the Unix CLI and I got a taste of bioinformatic softwares  
+including Nextflow, Geneious, and MEGAN (and got to use the Smithsonian’s HPC!).  
+This was my first real scientific project,  
+and I remember finding it amazing that we could extract information from sequence data—and 
+that our results potentially had implications for Hawaiian bird conservation.  
+My mentor taught me that computational methods are essential to biology research  
+(something that I, as a high school student broadly interested in biology and genetics, 
+hadn’t realized yet), and I decided that I would learn bioinformatics in addition to the 
+more-traditional biology methods that I’d planned to study. 
 
 Since starting college, my research has led me down a more Wetlab-oriented path. I currently work in Dr. Saha’s lab in the ApSci department (in the lab’s phage/microbiology and synthetic biology groups) and was on W&M’s 2025 iGEM team, where, as a member of the Wetlab team, I worked with <em>M. aeruginosa</em>, a green, photosynthetic cyanobacterium that causes harmful algal blooms. As part of the iGEM project, I conducted an experiment studying (via transcriptomics and 16S metagenomics) the survival and performance of the bacterial chassis <em>A. baylyi</em> under lakewater microcosm conditions simulating an algal bloom. I got the RNAseq data back just a few days before our major “wikifreeze” deadline, and had to scramble to run some quick differential gene expression analyses and write up the preliminary results for our wiki page. 
 
