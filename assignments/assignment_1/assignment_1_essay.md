@@ -14,9 +14,26 @@ My mentor taught me that computational methods are essential to biology research
 hadn’t realized yet), and I decided that I would learn bioinformatics in addition to the
 more-traditional biology methods that I’d planned to study.
 
-Since starting college, my research has led me down a more Wetlab-oriented path. I currently work in Dr. Saha’s lab in the ApSci department (in the lab’s phage/microbiology and synthetic biology groups) and was on W&M’s 2025 iGEM team, where, as a member of the Wetlab team, I worked with <em>M. aeruginosa</em>, a green, photosynthetic cyanobacterium that causes harmful algal blooms. As part of the iGEM project, I conducted an experiment studying (via transcriptomics and 16S metagenomics) the survival and performance of the bacterial chassis <em>A. baylyi</em> under lakewater microcosm conditions simulating an algal bloom. I got the RNAseq data back just a few days before our major “wikifreeze” deadline, and had to scramble to run some quick differential gene expression analyses and write up the preliminary results for our wiki page. 
+Since starting college, my research has led me down a more Wetlab-oriented path. I currently work in Dr. 
+Saha’s lab in the ApSci department (in the lab’s phage/microbiology and synthetic biology groups) and was 
+on W&M’s 2025 iGEM team, where, as a member of the Wetlab team, I worked with <em>M. aeruginosa</em>, a 
+green, photosynthetic cyanobacterium that causes harmful algal blooms. As part of the iGEM project, I 
+conducted an experiment studying (via transcriptomics and 16S metagenomics) the survival and performance 
+of the bacterial chassis <em>A. baylyi</em> under lakewater microcosm conditions simulating an algal 
+bloom. I got the RNAseq data back just a few days before our major “wikifreeze” deadline, and had to 
+scramble to run some quick differential gene expression analyses and write up the preliminary results for 
+our wiki page. 
 
-I realized that I definitely needed some more-formal training in bioinformatics/computing if I wanted to analyze all the data effectively—and that I would probably need the HPC if I wanted to look at total metatranscriptomics of the microcosm community in addition to single-species differential gene expression. I plan to analyze these datasets in-depth this semester, and I’m hoping that DATA 440 will give me the foundation in bioinformatics that I need in order to do so. My “plan of attack” for the semester is to implement the methods that I learn in class on my own data back in the research lab. I plan to focus both on learning to use the HPC and on making sure that I follow best bioinformatic practices in terms of project organization, workflow design, reproducibility, etc. I’m hoping that this will translate into results/research output from my iGEM data and that I’ll develop solid bioinformatics skills that I can apply to future research projects.
+I realized that I definitely needed some more-formal training in bioinformatics/computing if I wanted to 
+analyze all the data effectively—and that I would probably need the HPC if I wanted to look at total 
+metatranscriptomics of the microcosm community in addition to single-species differential gene 
+expression. I plan to analyze these datasets in-depth this semester, and I’m hoping that DATA 440 will 
+give me the foundation in bioinformatics that I need in order to do so. My “plan of attack” for the 
+semester is to implement the methods that I learn in class on my own data back in the research lab. I 
+plan to focus both on learning to use the HPC and on making sure that I follow best bioinformatic 
+practices in terms of project organization, workflow design, reproducibility, etc. I’m hoping that this 
+will translate into results/research output from my iGEM data and that I’ll develop solid bioinformatics 
+skills that I can apply to future research projects.
 
 In terms of assignment 1, my folder structure is good for reproducibility because it 1), clearly defines and separates raw data, code, and outputs/results and 2) contains a clear documentation/README file that uses relative paths so that any user can recreate my exact project structure on their own device. I’ve given the directories short names that clearly define their content and have included additional subdirectories to distinguish between different input data types (raw vs processed sequences vs refseqs vs metadata) and output types (figures, tables, and sequence outputs such as consensus sequences from reference-based assembly). Additionally, I’ve added relatively detailed comments to the README file to explain the purpose of each command that I used—so that another user could easily understand and recreate my project structure and so that any issues that arise are easy to trace back.
 
