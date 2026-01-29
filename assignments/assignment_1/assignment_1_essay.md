@@ -35,6 +35,22 @@ practices in terms of project organization, workflow design, reproducibility, et
 will translate into results/research output from my iGEM data and that I’ll develop solid bioinformatics 
 skills that I can apply to future research projects.
 
-In terms of assignment 1, my folder structure is good for reproducibility because it 1), clearly defines and separates raw data, code, and outputs/results and 2) contains a clear documentation/README file that uses relative paths so that any user can recreate my exact project structure on their own device. I’ve given the directories short names that clearly define their content and have included additional subdirectories to distinguish between different input data types (raw vs processed sequences vs refseqs vs metadata) and output types (figures, tables, and sequence outputs such as consensus sequences from reference-based assembly). Additionally, I’ve added relatively detailed comments to the README file to explain the purpose of each command that I used—so that another user could easily understand and recreate my project structure and so that any issues that arise are easy to trace back.
+In terms of assignment 1, my folder structure is good for reproducibility because it 1), clearly defines
+ and separates raw data, code, and outputs/results and 2) contains a clear documentation/README file that 
+uses relative paths so that any user can recreate my exact project structure on their own device. I’ve 
+given the directories short names that clearly define their content and have included additional 
+subdirectories to distinguish between different input data types (raw vs processed sequences vs refseqs 
+vs metadata) and output types (figures, tables, and sequence outputs such as consensus sequences from 
+reference-based assembly). Additionally, I’ve added relatively detailed comments to the README file to 
+explain the purpose of each command that I used—so that another user could easily understand and recreate 
+my project structure and so that any issues that arise are easy to trace back.
 
-Good documentation of code (including the code itself, but also other info like the software version numbers, the way the code was run, and the raw data) is essential because it ensures that your work is accessible—so that others can reproduce/validate your results and so that you can easily trace back any problems, make appropriate changes when issues/bugs arise, and repurpose useful parts of your code for other projects and datasets. Reading the bioinformatics textbook chapter and working through this assignment made me realize that I haven't recently always used the most optimal documentation practices when working with my own data (the iGEM time crunch wasn’t conducive to thoroughness). I plan to restart my analyses with a better grasp of best project organization and documentation practices and to create a workflow that is clean, well-documented, and reproducible.
+Good documentation of code (including the code itself, but also other info like the software version 
+numbers, the way the code was run, and the raw data) is essential because it ensures that your work is 
+accessible—so that others can reproduce/validate your results and so that you can easily trace back any 
+problems, make appropriate changes when issues/bugs arise, and repurpose useful parts of your code for 
+other projects and datasets. Reading the bioinformatics textbook chapter and working through this 
+assignment made me realize that I haven't recently always used the most optimal documentation practices 
+when working with my own data (the iGEM time crunch wasn’t conducive to thoroughness). I plan to restart 
+my analyses with a better grasp of best project organization and documentation practices and to create a 
+workflow that is clean, well-documented, and reproducible.
