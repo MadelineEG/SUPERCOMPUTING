@@ -6,10 +6,9 @@ when I spent a summer working with a bioinformatician at the National Zoo to rec
 and phylogenetically analyze a historical genome sequence of a pathogen called avian poxvirus. 
 My mentor taught me the basics of using the Unix CLI and I got a taste of bioinformatic softwares 
 including Nextflow, Geneious, and MEGAN (and got to use the Smithsonian’s HPC!). 
-This was my first real scientific project, 
-and I remember finding it amazing that we could extract information from sequence data—and
-that our results potentially had implications for Hawaiian bird conservation. 
-My mentor taught me that computational methods are essential to biology research 
+This was my first real scientific project, and I remember finding it amazing that we could extract
+information from sequence data—and that our results potentially had implications for Hawaiian bird 
+conservation. My mentor taught me that computational methods are essential to biology research 
 (something that I, as a high school student broadly interested in biology and genetics,
 hadn’t realized yet), and I decided that I would learn bioinformatics in addition to the
 more-traditional biology methods that I’d planned to study.
