@@ -50,6 +50,6 @@ accessible—so that others can reproduce/validate your results and so that you 
 problems, make appropriate changes when issues/bugs arise, and repurpose useful parts of your code for 
 other projects and datasets. Reading the bioinformatics textbook chapter and working through this 
 assignment made me realize that I haven't recently always used the most optimal documentation practices 
-when working with my own data (the iGEM time crunch wasn’t conducive to thoroughness). I plan to restart 
-my analyses with a better grasp of best project organization and documentation practices and to create a 
-workflow that is clean, well-documented, and reproducible.
+when working with my own data (unfortunately, the iGEM time crunch wasn’t always conducive to thoroughness).
+ I plan to restart my analyses with a better grasp of best project organization and documentation practices 
+ and to create a workflow that is clean, well-documented, and reproducible.
