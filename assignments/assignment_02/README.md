@@ -7,7 +7,7 @@ Assignment 02
 
 ### 1. Setting Up
 **Confirmed setup on supercomputer**
-Logged into HPC, verified assignment_02 existence and setup:
+(Logged into HPC, verified assignment_02 existence and setup:)
 ```bash
 bora
 cd ~/SUPERCOMPUTING
