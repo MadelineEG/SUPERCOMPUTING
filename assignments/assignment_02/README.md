@@ -20,7 +20,6 @@ mkdir assignments/assignment_02/data
 
 ### 2. Downloading from NCBI via Command-Line FTP
 **Downloaded files from NCBI on local device**
-Troubleshot ftp access:
 ```bash
 # attempted ftp command procedure
 ftp ftp.ncbi.nlm.nih.gov
@@ -58,14 +57,14 @@ ls
 ```
 
 ### 3. File Transfer and Permissions
-Opened Filezilla, located both files under SUPERCOMPUTING/assignments/assignment_02 on local device
-Opened assignments/assignment_02/data on FileZilla remote site (HPC) tab, then dragged files from local to remote
+Opened Filezilla, located both files under SUPERCOMPUTING/assignments/assignment_02 on local device.
+Opened assignments/assignment_02/data on FileZilla remote site (HPC) tab, then dragged files from local to remote.
 Verified successful copying of files to HPC data folder:
 ```bash
 # on HPC, from SUPERCOMPUTING directory:
 ls assignments/assignment_02/data
 ```
-realized that inconsistency now existed between local and HPC because data folder only existed on HPC (not in local assignment_02 directory)
+realized that inconsistency now existed between local and HPC because data folder only existed on HPC (not in local assignment_02 directory), so
 removed new files from local device, pushed from HPC, and pulled back to local to resolve issue
 
 Checked and modified file permissions on HPC:
@@ -121,7 +120,7 @@ Alias descriptions:
 * ll = Lists directory contents, including hidden files, in long format and in human readable format, with a code specifying file type, and with directories listed before files
 
 ## Summary of directory structure
-Below is within the SUPERCOMPUTING/assignments/assignments_02 directory
+Below is within the SUPERCOMPUTING/assignments/assignment_02 directory
 ```text
 ├── data
 │   ├── GCF_000005845.2_ASM584v2_genomic.fna.gz
