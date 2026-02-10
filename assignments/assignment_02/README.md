@@ -120,8 +120,11 @@ Alias descriptions:
 
 ## Summary of directory structure
 ├── data
+
 │   ├── GCF_000005845.2_ASM584v2_genomic.fna.gz
+
 │   └── GCF_000005845.2_ASM584v2_genomic.gff.gz
+
 └── README.md
 
 ## Reflection
