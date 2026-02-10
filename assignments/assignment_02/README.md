@@ -119,12 +119,10 @@ Alias descriptions:
 * ll = Lists directory contents, including hidden files, in long format and in human readable format, with a code specifying file type, and with directories listed before files
 
 ## Summary of directory structure
+```text
 ├── data
-
 │   ├── GCF_000005845.2_ASM584v2_genomic.fna.gz
-
 │   └── GCF_000005845.2_ASM584v2_genomic.gff.gz
-
 └── README.md
-
+```
 ## Reflection
