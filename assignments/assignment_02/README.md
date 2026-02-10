@@ -119,10 +119,12 @@ Alias descriptions:
 * ll = Lists directory contents, including hidden files, in long format and in human readable format, with a code specifying file type, and with directories listed before files
 
 ## Summary of directory structure
+Below is within the SUPERCOMPUTING/assignments/assignments_02 directory
 ```text
 ├── data
 │   ├── GCF_000005845.2_ASM584v2_genomic.fna.gz
 │   └── GCF_000005845.2_ASM584v2_genomic.gff.gz
 └── README.md
 ```
-## Reflection
+## Reflection (4-5 sentences)
+Everything seemed to work effectively, and I was able to relatively quickly get set up, transfer relevant files between my device and the HPC via FileZilla, and verify their integrity. I had to troubleshoot some minor issues on the NCBI download step--ftp returned an error, which I fixed by entering "passive" mode. I also ran into a few challenges while updating files and directories across the HPC and my local device (I saw the message "hint: You have divergent branches and need to specify how to reconcile them" a few times when I tried to git pull). I was able to resolve this by running "git pull --rebase origin main," but I will be more careful about updating consistently across the supercomputer and my device (by git pushing and pulling between the two) next time to avoid potential downstream merge conflicts.
