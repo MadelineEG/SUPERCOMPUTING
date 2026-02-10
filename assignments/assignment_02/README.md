@@ -1,7 +1,9 @@
 # README for Assignment 2
+``` text
 Madeline Eibner-Gebhardt
 Assignment 02
 12 Feb, 2026
+```
 
 ### 1. Setting Up
 **Confirmed setup on supercomputer**
