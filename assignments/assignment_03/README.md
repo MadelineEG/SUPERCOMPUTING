@@ -82,6 +82,7 @@ cat $MYFILE | grep "^>" | grep "chromosome" | wc -l
 still not certain how to effectively filter out \n
 
 **7) How many nucleotides are in the sequence for 'chromosome 5'? (answer=26,975,503)**
+
 **8) How many sequences contain "AAAAAAAAAAAAAAAA"? (answer=1)**
 
 ```bash
