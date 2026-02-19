@@ -26,6 +26,7 @@ Use wget to download data from an internet link, then unzip it with gunzip
 cd data
 wget https://gzahn.github.io/data/GCF_000001735.4_TAIR10.1_genomic.fna.gz
 gunzip GCF_000001735.4_TAIR10.1_genomic.fna.gz
+cd .. # moving back to assignment_03 so that the "exploring file contents" file paths will work
 ```
 
 ### 3. Explore File Contents
