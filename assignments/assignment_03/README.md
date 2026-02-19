@@ -31,105 +31,78 @@ gunzip GCF_000001735.4_TAIR10.1_genomic.fna.gz
 ### 3. Explore File Contents
 
 ```bash
-# from within assignments/assignment_03:
-cd data
-```
-
-```bash
 MYFILE="GCF_000001735.4_TAIR10.1_genomic.fna"
 ```
-
-Note: all of the below need to be run from the data folder 
 
 **1) How many sequences are in the FASTA file? (answer=7)**
 
 ```bash
-grep "^>" $MYFILE | wc -l
+grep "^>" data/$MYFILE | wc -l
 ```
 
 **2) What is the total number of nucleotides (not including header lines or newlines)? (answer=119,668,634)**
 
 ```bash
-cat $MYFILE | grep -v "^>" | tr -d '\n' | wc -m
+cat data/$MYFILE | grep -v "^>" | tr -d '\n' | wc -m
 ```
 
 **3) How many total lines are in the file? (answer=14)**
 
 ```bash
-cat $MYFILE  | wc -l
+cat data/$MYFILE  | wc -l
 ```
 
 **4) How many header lines contain the word "mitochondrion"? (answer=1)**
 
-may want to automate more by, e.g., storing all the header lines in a var that can access for multiple things below? -- actually, almost definitely am suposed to do this; discuss in reflection -- or maybe not, think abt it on Tuesday
-
 ```bash
-cat $MYFILE | grep "^>" | grep "mitochondrion" | wc -l
+cat data/$MYFILE | grep "^>" | grep "mitochondrion" | wc -l
 ```
 
 **5) How many header lines contain the word "chromosome"? (answer=5)**
 
 ```bash
-cat $MYFILE | grep "^>" | grep "chromosome" | wc -l
+cat data/$MYFILE | grep "^>" | grep "chromosome" | wc -l
 ```
 
 **6) How many nucleotides are in each of the first 3 chromosome sequences? (answer=30,427,672   19,698,290  23,459,831)**
 
 ```bash
-cat $MYFILE | grep -v "^>" | head -1 | wc -m
-cat $MYFILE | grep -v "^>" | tail -6 | head -1 | wc -m
-cat $MYFILE | grep -v "^>" | tail -5 | head -1 | wc -m
+cat data/$MYFILE | grep -v "^>" | head -1 | wc -m
+cat data/$MYFILE | grep -v "^>" | tail -6 | head -1 | wc -m
+cat data/$MYFILE | grep -v "^>" | tail -5 | head -1 | wc -m
 ```
 
 **7) How many nucleotides are in the sequence for 'chromosome 5'? (answer=26,975,503)**
 
 ```bash
-cat $MYFILE | grep -v "^>" | tail -3 | head -1 | wc -m
+cat data/$MYFILE | grep -v "^>" | tail -3 | head -1 | wc -m
 ```
 
 **8) How many sequences contain "AAAAAAAAAAAAAAAA"? (answer=1)**
 
 ```bash
-grep "AAAAAAAAAAAAAAAA" $MYFILE | wc -l
+grep "AAAAAAAAAAAAAAAA" data/$MYFILE | wc -l
 ```
 
 **9) If you were to sort the sequences alphabetically, which sequence (header) would be first in that list? (answer=>NC_000932.1...)**
 
 ```bash
-(sort <(cat $MYFILE | grep "^>" | grep ">")) | head -1
+(sort <(cat data/$MYFILE | grep "^>" | grep ">")) | head -1
 ```
 
 **10) How would you make a new tab-separated version of this file, where the first column is the headers and the second column are the associated sequences? (show the command(s))**
 
 ```bash
-paste <(grep "^>" $MYFILE) <(grep -v "^>" $MYFILE) > combined.txt
+paste <(grep "^>" data/$MYFILE) <(grep -v "^>" data/$MYFILE) > combined.txt
 ```
 
 ## Reflection (300-600 words)
-Originally did cat GCF_000001735.4_TAIR10.1_genomic.fna | grep -v "^>" | grep -i "[atcgn]" | wc -m for 2 and got a count that included newlines
 
-Had to learn some new sytax for grep (by looking in the help file) -- e.g., grep -i to make it case insensitive (noticed that some nts were capitalized and some not in the raw data)
+For each question, I found that the easiest approach was to 1), determine what specific pieces of information I needed in order to obtain the final answer, 2), determine what individual commands I needed in order to extract those pieces of information, and 3), determine in what order (and in what way) to stitch together the commands in order to process the relevant information and obtain a final answer. For example, to answer question 2 (outputting the total number of nucleotides), I first determined that I needed to filter for sequence lines (i.e., lines that were not headers) and then that I needed to use a word count (wc) related tool (wc with the -m flag gives character count) to count the characters. I stitched these together by piping the stdout of grep -v into wc -m. 
 
-also grep doesn't work for all apps bc line-based -- needed to use tr -d '\n' to filter out individual newline characters
+I often had to troubleshoot results that did not make sense. With question 2, for example, I obtained a nucleotide count that was too high, then realized that I needed to filter out the newline characters. Using the tr command (tr –help told me that I could use the -d flag to delete all the unwanted newlines), I added a newline-removal step that took the stdout of grep -v and sent the header-filtered, newline-removed stdout as stdin to wc -m. I learned that thinking about Unix commands in small chunks is effective and makes troubleshooting errors easier.
 
-For question 3, kept trying to use grep to obtain the number of lines -- realized that just doing wc -l on the file was simpler
+Sometimes I forgot to redirect an output to a specific file or command and was surprised when a long string of nucleotides spewed out onto my screen. This happened annoyingly often, but thankfully I was able to ^C out of it before I ran into any major problems. For example, for question 10, I accidentally ran paste <(grep "^>" data/$MYFILE) <(grep -v "^>" data/$MYFILE) without the > combined.txt telling it to paste into a specific file.
 
-grep -v "\n" didn't work
+The skills in this assignment are essential for computational work because they allow the scientist to quickly extract information from large datasets and answer questions that would be impossible to answer via manual searching. One way to automate my solutions would be to create shortcuts for certain commonly-used tools and their specific uses. For example, grep -v “^>”, since I use it often, could potentially be encoded by a shorter word or code, similarly to aliases. On its own, this wouldn’t be great for reproducibility, but the README could have a specifying all the “shortcuts” so that the user could paste them in and run the code as-expected.
 
-Realized that I could automate certain elements to a greater extent than I had been doing (e.g., turning the file name into an env var)
-
-cat $MYFILE | grep -v "^>" cats lots of sequence data
-or 
-cat $MYFILE | grep "^>" 
-
-cat $MYFILE | grep "^>" | grep ">" fixes the problem and just ouputs the header rows
-
-paste <(cat $MYFILE | grep "^>" | grep ">") <(cat $MYFILE | grep -v "^>" | tr -d '\n') bad bc removed newlines, sent lots of stuff to screen (last question)
-
-paste <(cat $MYFILE | grep "^>" | grep ">") <(cat $MYFILE | grep -v "^>") -- also sent lots of stuff to screen
-
-
-forgetting about > and often have issue where lots of nts show up on screen
-for 10, forgot that could combine the parts, first instinct was to make two files separately and then combine
-
-Realized afterward that the "cat myfile" method might not have made the most sense
