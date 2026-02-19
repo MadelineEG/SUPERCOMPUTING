@@ -8,10 +8,6 @@ Assignment 03
 ### 1. Setup
 On local device, made an alias for the astral server login in .bashrc (from within home directly -- or, on another device, wherever .bashrc is located)
 
-```text
-alias astral="ssh mweibnergebhar@astral.sciclone.wm.edu"
-```
-
 Navigate to the assignments/assignment_03 directory on the HPC, then set it up
 
 ```bash
@@ -43,7 +39,7 @@ cd data
 MYFILE="GCF_000001735.4_TAIR10.1_genomic.fna"
 ```
 
-**Note: Still need to figure out 6, 7, and 10**
+Note: all of the below need to be run from the data folder 
 
 **1) How many sequences are in the FASTA file? (answer=7)**
 
@@ -79,9 +75,17 @@ cat $MYFILE | grep "^>" | grep "chromosome" | wc -l
 
 **6) How many nucleotides are in each of the first 3 chromosome sequences? (answer=30,427,672   19,698,290  23,459,831)**
 
-still not certain how to effectively filter out \n
+```bash
+cat $MYFILE | grep -v "^>" | head -1 | wc -m
+cat $MYFILE | grep -v "^>" | tail -6 | head -1 | wc -m
+cat $MYFILE | grep -v "^>" | tail -5 | head -1 | wc -m
+```
 
 **7) How many nucleotides are in the sequence for 'chromosome 5'? (answer=26,975,503)**
+
+```bash
+cat $MYFILE | grep -v "^>" | tail -3 | head -1 | wc -m
+```
 
 **8) How many sequences contain "AAAAAAAAAAAAAAAA"? (answer=1)**
 
@@ -97,10 +101,8 @@ grep "AAAAAAAAAAAAAAAA" $MYFILE | wc -l
 
 **10) How would you make a new tab-separated version of this file, where the first column is the headers and the second column are the associated sequences? (show the command(s))**
 
-Need to paste the below together somehow, not sure how or if did second part properly
 ```bash
-(cat $MYFILE | grep "^>" | grep ">") > headers.txt
-(cat $MYFILE | grep -v "^>") > sequences.txt
+paste <(grep "^>" $MYFILE) <(grep -v "^>" $MYFILE) > combined.txt
 ```
 
 ## Reflection (300-600 words)
@@ -125,3 +127,9 @@ cat $MYFILE | grep "^>" | grep ">" fixes the problem and just ouputs the header 
 paste <(cat $MYFILE | grep "^>" | grep ">") <(cat $MYFILE | grep -v "^>" | tr -d '\n') bad bc removed newlines, sent lots of stuff to screen (last question)
 
 paste <(cat $MYFILE | grep "^>" | grep ">") <(cat $MYFILE | grep -v "^>") -- also sent lots of stuff to screen
+
+
+forgetting about > and often have issue where lots of nts show up on screen
+for 10, forgot that could combine the parts, first instinct was to make two files separately and then combine
+
+Realized afterward that the "cat myfile" method might not have made the most sense
