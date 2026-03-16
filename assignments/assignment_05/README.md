@@ -158,17 +158,45 @@ pipeline.sh
 
 ### 6. Delete all the data files and start over
 
+Delete the data files:
+```bash
+cd ~/SUPERCOMPUTING/assignments/assignment_05/data/raw
+rm *.fastq.gz
+cd ~/SUPERCOMPUTING/assignments/assignment_05/data/trimmed
+rm *.fastq.gz
+```
+
+Rerun pipeline:
+```bash
+pipeline.sh
+```
+
 ## Instructions for Future User
+**Purpose:** This pipeline downloads and unzips a dataset of example fastq files (paired end), then processes them via quality filtering and trimming with fastp. The current script trims 8 bases from the front and 20 bases from the end of each forward and reverse read, discards reads that have "N" bases, are shorter than 100 nt, or have an average quality score of less than 20.
+
+**Requirements:** 
+* fastp 1.1.0 downloaded and added to $PATH
+* Specified file organization (see "Setup" section above)
+* Scripts 01_download_data.sh, 02_run_fastp.sh, and pipeline.sh (see above code for script contents and information) downloaded and added to $PATH
+
+**Summary Instructions for Running the Pipeline:**
+1) Set up appropriate file organization (see part 1 above)
+2) Ensure fastp 1.1.0 is installed and added to $PATH 
+3) Create script files 01_download_data.sh and 02_run_fastp.sh containing the scripts specified above
+4) Create central pipeline pipeline.sh file containing the script specified above
+5) Ensure all scripts are executable and added to $PATH
+6) Make any desired modifications to fastp processing specifications, output directory location, etc in 02_run_fastp.sh
+7) Run pipeline:
+```bash
+    pipeline.sh
+```
 
 ## Reflection
-* getting scripts to work properly from wherever -- remembering to update permissions, $PATH, run exec bash, etc
-* intially made a mistake with the naming convention (put FWD and REV rather than R1 and R2 in the variables for the 02_run_fastp.sh script and was confused briefly about why fastp was raising an error)
-* getting output to go into correct directory -- created a var specifying the output dir in the 02 script -- gave me an error at first bc tried to expand ~ in "" -- needed to use $HOME instead
+I encountered a few minor challenges related to getting the scripts to work properly from different directory locations on the HPC. I remembered to add my script locations to $PATH, but they sometimes failed to run either because I had forgotten to update the permissions using permission or I hadn't run exec bash to process the changes I'd made to .bashrc. I also ran into an error where fastp failed to produce the output files. I eventually realized that I'd used "~" in quotes in a file path specifying the output directory in 02_run_fastp.sh. I changed this to "$HOME". I also realized that I had misnamed the fwd and rev sequences in 02_run_fastp.sh as using the patterns "FWD" and "REV" rather than "R1" and "R2." Once I fixed this, the pipeline ran as expected
 
-* learned that can link together individual scripts in a central pipeline script
-* can easily automate removal of json and html in fastp
-* useful to specify $OUT_DIR in scripts in addition to inputs and outputs
-* useful to test individual scripts on a subset of data before putting them together into a pipeline and running it (makes it easier to find and debug the sources of errors)
+I learned that it can be convenient to link together individual scripts in a central pipeline script for workflow automation. I also found that it was useful to test individual scripts on a subset of data before putting them together into a pipeline and running it. This made it easier to detect and debug the source of errors and I can imagine would would be especially important in larger and more-complex pipelines.
 
-* separate scripts in pipeline = useful bc modularity and can prob mix and match them into dif pipelines -- also easier to understand the overall pipeline when you look at it, vs. having all the details of the complex script components
-* can be annoying bc need to put them all into $PATH -- also if someone else wants to use it, they have to make sure they have all the individual scripts
+Splitting a pipeline into multiple scripts (that you link together) is useful because it creates modularity--so that others can more easily mix and match components of the pipeline with other pipelines or with their own scripts. The modularity also makes it easier to identify the source of errors when they arise because they allow the user to inspect smaller portions of code and their intermediate outputs--and to test the portions of code on small subsets of data before running everything.
+
+On the other hand, this modularity can sometimes be inconvenient because it requires the user to make sure that 1), they have all of the scripts and that 2), all of the scripts have the correct permissions, are in $PATH, etc. This combination of factors might make reproducibility slightly more difficult.
+
