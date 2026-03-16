@@ -238,6 +238,7 @@ echo "Summary of Local run:"
 tail -n 10 ./assemblies/assembly_local/local_flye.log
 ```
 
+**Running the Pipeline**
 ```bash
 chmod +x ./pipeline.sh
 ./pipeline.sh
@@ -245,6 +246,21 @@ chmod +x ./pipeline.sh
 
 ### 9. Delete everything except scripts and start over
 Removed all raw data and assembly outputs. Reran pipeline to test functionality. 
+
+## Description
+This pipeline:
+* Downloads *E. coli* phage raw genome sequences
+* Installs Flye, a genome assembly software, using three different methods: Conda, module-based installation, and local installation
+* Assembles the *E. coli* phage data via Flye after each installation  
+* Outputs summary stats for each assembly to the screen
+
+**Usage:**
+
+Run this pipline from the folder assignments_06 (see setup instructions from part 1):
+```bash
+chmod +x ./pipeline.sh
+./pipeline.sh
+```
 
 ## Reflection
 I ran into a few basic challenges while writing and testing my scripts. I had a few "typo" problems, e.g., typing "outdir" instead of "out-dir" with Flye, which I fixed by looking more closely at the Flye user manual. I also couldn't get 03_run_flye_conda.sh to run at first and eventually realized that it had either wiped itself clean or I hadn't saved it properly. Fortunately, I'd already copied it into the README. My final pipeline also initially crashed at the local Flye build step because I had already downloaded Flye. I added an if statement checking for Flye in the programs directory and downloading it and adding it to the path in the case that it wasn't present.
