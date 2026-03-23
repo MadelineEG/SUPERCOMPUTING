@@ -10,8 +10,8 @@ Assignment 07
 cd ~/SUPERCOMPUTING/assignments/assignment_07
 mkdir {data,output,scripts}
 mkdir data/{clean,dog_reference,raw}
-touch scripts/{01_download_data.sh,02_clean_reads.sh,03_map_reads.sh}
-chmod +x scripts/01_download_data.sh scripts/02_clean_reads.sh scripts/03_map_reads.sh
+touch scripts/{01_download_data.sh,02_clean_reads.sh,03_map_reads.sh,inspect.sh}
+chmod +x scripts/01_download_data.sh scripts/02_clean_reads.sh scripts/03_map_reads.sh scripts/inspect.sh
 touch ./assignment_7_pipeline.slurm
 ```
 
@@ -54,7 +54,7 @@ cd ../..
 
 ### 3. Clean up raw reads
 
-Script to 
+Script to remove adapters and low quality reads:
 
 In 02_clean_reads.sh:
 ```bash
@@ -82,6 +82,8 @@ fastp parameters:
 * --json /dev/null --html /dev/null: get rid of extra .json and .html files that we don't need
 
 ### 4. Map clean reads to dog genome / 5. Extract reads that matched dog genome
+
+Script to obtain reads matching *Canis familiaris*:
 
 In 03_map_reads.sh:
 ```bash
@@ -195,7 +197,7 @@ cat ./output/matches-summary.tsv
 ```
 
 ## Usage
-**Purpose:** To quantify the number of reads that match *Canis familiaris* in Ilumina shotgun metagenomic data
+**Purpose:** To quantify the number of reads that match *Canis familiaris* in Illumina shotgun metagenomic data
 
 **To run the pipeline:**
 1. Follow the setup steps in Part 1 to obtain the required directory structure
