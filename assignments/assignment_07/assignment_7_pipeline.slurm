@@ -10,6 +10,7 @@
 #SBATCH -o ./output/assignment_7_%j.out #STDOUT to file (%j is jobID)
 #SBATCH -e ./output/assignment_7_%j.err #STDERR to file (%j is jobID)
 
+# set up conda environment
 module load miniforge3
 
 source "$(conda info --base)/etc/profile.d/conda.sh"
@@ -18,10 +19,14 @@ conda create -y -n assignment_07-env bbmap datasets sra-tools fastp samtools -c 
 
 conda activate assignment_07-env
 
+# download SRA data and dog reference genome
 ./scripts/01_download_data.sh
 
+# clean SRA data with fastp
 ./scripts/02_clean_reads.sh
 
+# map data against the dog genome and extract reads that align
 ./scripts/03_map_reads.sh
 
+# deactivate conda environment
 conda deactivate
